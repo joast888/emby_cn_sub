@@ -25,5 +25,9 @@ jobs:
       uses: microsoft/setup-msbuild@v1.0.0
     - name: Build Project
       run: msbuild CnSub/CnSub.csproj /p:Configuration=Release /verbosity:quiet
-  - name: Upload bin directory
+    - name: Upload bin directory
       uses: actions/upload-artifact@master
+      if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
+      with:
+        name: subcn.dll
+        path: dll/
