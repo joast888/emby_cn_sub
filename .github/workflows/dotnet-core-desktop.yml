@@ -31,4 +31,4 @@ jobs:
     - name: Prepare MSBuild
       uses: microsoft/setup-msbuild@v1.0.0
     - name: Build Project
-      run: msbuild \CnSub\CnSub.csproj /p:Configuration=Release /verbosity:quiet
+      run: msbuild Ruminoid.Trimmer.Shell/CnSub/CnSub.csproj /p:Configuration=Release /verbosity:quiet
